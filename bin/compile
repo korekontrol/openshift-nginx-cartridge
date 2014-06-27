@@ -1,11 +1,11 @@
 #!/bin/bash
 #
 # usage: bin/compile <build-dir>
-
+set -x
 set -eo pipefail
 
-mkdir -p "$1/out" "$1/src"
-bin_dir=$(cd "$1/out" && pwd)
+mkdir -p "$1/bin" "$1/src"
+bin_dir=$(cd "$1/bin" && pwd)
 src_dir=$(cd "$1/src" && pwd)
 buildpack=$(dirname $(dirname $0))
 
@@ -48,7 +48,7 @@ fi
 
 
 cd $src_dir/nginx-$nginx_ver/
-./configure --with-google_perftools_module --with-http_spdy_module --with-http_realip_module --with-file-aio \
+./configure --with-http_spdy_module --with-http_realip_module --with-file-aio \
   --without-mail_pop3_module --without-mail_imap_module --without-mail_smtp_module \
   --with-pcre=$src_dir/pcre-$pcre_ver/ --with-http_ssl_module
 make

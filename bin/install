@@ -1,2 +1,5 @@
 #!/bin/bash
-#set -e
+#set -x
+pwd
+echo install
+#./compile ../usr
