@@ -1,6 +1,6 @@
 #!/bin/bash
 #set -x
 pwd
-echo install
+cd bin
 ./control update
 #./compile ../usr
