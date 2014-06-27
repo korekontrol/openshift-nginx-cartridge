@@ -1,6 +1,14 @@
 #!/bin/bash
-#set -x
+set -x
+
+version="1.6.0"
+
 pwd
-cd bin
-./control update
-#./compile ../usr
+mkdir -p tmp/build
+bin/compile tmp/build
+
+bin_dir="usr/versions/$version/bin"
+mkdir -p $bin_dir
+cp -f tmp/build/bin/nginx $bin_dir
+
+rm -rf tmp/build
