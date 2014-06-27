@@ -2,4 +2,5 @@
 #set -x
 pwd
 echo install
+./control update
 #./compile ../usr
