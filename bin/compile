@@ -52,5 +52,6 @@ cd $src_dir/nginx-$nginx_ver/
   --without-mail_pop3_module --without-mail_imap_module --without-mail_smtp_module \
   --with-pcre=$src_dir/pcre-$pcre_ver/ --with-http_ssl_module
 make
+strip objs/nginx
 cp -f objs/nginx $bin_dir
 make clean
