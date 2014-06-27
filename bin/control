@@ -3,7 +3,7 @@ set -x
 source $OPENSHIFT_CARTRIDGE_SDK_BASH
 
 
-NGINX_EXEC=$OPENSHIFT_NGINX_DIR/usr/bin/nginx
+NGINX_EXEC=$OPENSHIFT_NGINX_DIR/versions/$NGINX_VERSION/bin/nginx
 NGINX_CONFIG_FILE=$OPENSHIFT_NGINX_DIR/conf/nginx.conf
 NGINX_PID_FILE=$OPENSHIFT_NGINX_DIR/run/nginx.pid
 
@@ -89,7 +89,7 @@ function update() {
     mkdir -p tmp/build
     bin/compile tmp/build
 
-    bin_dir="usr/versions/$version/bin"
+    bin_dir="versions/$version/bin"
     mkdir -p $bin_dir
     cp -f tmp/build/bin/nginx $bin_dir
 

@@ -1,14 +1,14 @@
 #!/bin/bash
-set -x
+#set -x
 
-version="1.6.0"
+#version="1.6.0"
 
-pwd
-mkdir -p tmp/build
-bin/compile tmp/build
+#pwd
+#mkdir -p tmp/build
+#bin/compile tmp/build
 
-bin_dir="usr/versions/$version/bin"
-mkdir -p $bin_dir
-cp -f tmp/build/bin/nginx $bin_dir
+#bin_dir="versions/$version/bin"
+#mkdir -p $bin_dir
+#cp -f tmp/build/bin/nginx $bin_dir
 
-rm -rf tmp/build
+#rm -rf tmp/build
